@@ -1,0 +1,15 @@
+\documentclass{article}
+\usepackage{csvsimple}
+\usepackage{booktabs}
+\begin{document}
+
+% Binance data table
+\csvreader[
+    table head=\toprule Time & Open & High & Low & Close\\\midrule,
+    late after line=\\,
+    table foot=\bottomrule,
+    respect all,
+]{binance_data.csv}{timestamp=\Time,open=\Open,high=\High,low=\Low,close=\Close}%
+{\Time & \Open & \High & \Low & \Close}
+
+\end{document}
